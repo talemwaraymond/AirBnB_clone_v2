@@ -1,17 +1,16 @@
 #!/usr/bin/python3
-""" a flask web app
-"""
 
 from flask import Flask
+
+# Create a Flask app
 app = Flask(__name__)
 
-
-@app.route('/')
-def hello_flask():
-    """Return string when route queried
-    """
+# Define a route to display "Hello HBNB!"
+@app.route('/', strict_slashes=False)
+def hello_hbnb():
     return 'Hello HBNB!'
 
 if __name__ == '__main__':
-    app.url_map.strict_slashes = False
+    # Run the Flask app on 0.0.0.0, port 5000
     app.run(host='0.0.0.0', port=5000)
+
